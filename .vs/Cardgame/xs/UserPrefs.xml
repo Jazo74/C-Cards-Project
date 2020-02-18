@@ -1,15 +1,19 @@
 ﻿<Properties StartupConfiguration="{0537C21B-55CC-4799-996D-6BA44D2874CD}|Default">
   <MonoDevelop.Ide.ItemProperties.Cardgame FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="IDeck.cs" />
+      <File FileName="Deck.cs" />
+      <File FileName="PlayerHand.cs" Line="40" Column="42" />
+      <File FileName="Card.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Cardgame" expanded="True">
             <Node name="Cardgame" expanded="True">
-              <Node name="Program.cs" selected="True" />
+              <Node name="Player.cs" selected="True" />
             </Node>
           </Node>
         </State>
