@@ -6,7 +6,11 @@ namespace Cardgame
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Deck deck = new Deck("cards.csv");
+            Console.ReadLine();
         }
+        
+        
     }
 }
+    

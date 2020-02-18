@@ -1,0 +1,12 @@
+C:\Users\istva\Source\Repos\C-Cards-Project\obj\Debug\netcoreapp3.1\Cardgame.csprojAssemblyReference.cache
+C:\Users\istva\Source\Repos\C-Cards-Project\obj\Debug\netcoreapp3.1\Cardgame.AssemblyInfoInputs.cache
+C:\Users\istva\Source\Repos\C-Cards-Project\obj\Debug\netcoreapp3.1\Cardgame.AssemblyInfo.cs
+C:\Users\istva\Source\Repos\C-Cards-Project\bin\Debug\netcoreapp3.1\Cardgame.exe
+C:\Users\istva\Source\Repos\C-Cards-Project\bin\Debug\netcoreapp3.1\cards.csv
+C:\Users\istva\Source\Repos\C-Cards-Project\bin\Debug\netcoreapp3.1\Cardgame.deps.json
+C:\Users\istva\Source\Repos\C-Cards-Project\bin\Debug\netcoreapp3.1\Cardgame.runtimeconfig.json
+C:\Users\istva\Source\Repos\C-Cards-Project\bin\Debug\netcoreapp3.1\Cardgame.runtimeconfig.dev.json
+C:\Users\istva\Source\Repos\C-Cards-Project\bin\Debug\netcoreapp3.1\Cardgame.dll
+C:\Users\istva\Source\Repos\C-Cards-Project\bin\Debug\netcoreapp3.1\Cardgame.pdb
+C:\Users\istva\Source\Repos\C-Cards-Project\obj\Debug\netcoreapp3.1\Cardgame.dll
+C:\Users\istva\Source\Repos\C-Cards-Project\obj\Debug\netcoreapp3.1\Cardgame.pdb

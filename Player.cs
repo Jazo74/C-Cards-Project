@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 namespace Cardgame
 {
-    public class Player : IDeck, IConnect
+    public class Player : IDeck
     {
         List<Card> hand;
         public string Name { get; }
