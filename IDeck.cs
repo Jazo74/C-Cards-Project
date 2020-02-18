@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 namespace Cardgame
 {
     public interface IDeck
@@ -6,5 +7,6 @@ namespace Cardgame
         public int GetNumberOfCards();
         public Card GetTopCard();
         public void Shuffle();
+        public List<string> GetParameters();
     }
 }

@@ -47,6 +47,28 @@ namespace Cardgame
             }
             hand = tempList;
         }
-    
+
+        public void AddCard(Card card)
+        {
+            hand.Add(card);
+        }
+
+        public void YouWon(List<Card> cards)
+        {
+            foreach (Card card in cards)
+            {
+                hand.Add(card);
+            }
+        }
+
+        public virtual string ChooseParam()
+        {
+            return null;
+        }
+
+        public List<string> GetParameters()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -6,7 +6,9 @@ namespace Cardgame
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string x = "15,2";
+            float y = float.Parse(x);
+            Console.WriteLine("ok");
         }
     }
 }
