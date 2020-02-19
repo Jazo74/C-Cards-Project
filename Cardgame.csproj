@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Untitled Diagram.drawio" />
+    <None Remove="Cardgame UML.drawio" />
+  </ItemGroup>
+  <ItemGroup>
     <None Update="cards.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
