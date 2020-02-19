@@ -10,7 +10,6 @@ namespace Cardgame
 
         public void PutTable(string playername, Card card)
         {
-            TableDict.Clear();
             TableDict.Add(playername, card);
         }
         public string GetWinner(string parameter)
@@ -36,6 +35,10 @@ namespace Cardgame
                 cards.Add(item.Value);
             }
             return cards;
+        }
+        public void ResetTable()
+        {
+            TableDict.Clear();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{0537C21B-55CC-4799-996D-6BA44D2874CD}|Default">
   <MonoDevelop.Ide.ItemProperties.Cardgame PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Dealer.cs">
     <Files>
       <File FileName="AIPlayer.cs" Line="35" Column="37" />
       <File FileName="IConnect.cs" />

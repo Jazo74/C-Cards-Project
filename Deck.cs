@@ -61,9 +61,9 @@ namespace Cardgame
         {
             List<int> indexList = new List<int>();
             int index;
-            while (indexList.Count < 30)
+            while (indexList.Count < 36)
             {
-                index = rnd.Next(0, 30);
+                index = rnd.Next(0, 36);
                 if (!indexList.Contains(index))
                 {
                     indexList.Add(index);
