@@ -8,7 +8,7 @@ namespace Cardgame
         public string Name { get; }
         public string Type { get; }
 
-        public Player(string name, string type )
+        public Player(string type, string name )
         {
             hand = new List<Card>();
             Name = name;
@@ -40,14 +40,15 @@ namespace Cardgame
             }
         }
 
-        public virtual string ChooseParam()
+        public virtual string ChooseParameter()
         {
-            return null;
+            return "human";
         }
 
         public void Shuffle() { }
 
         public List<string> GetParameters()
+
         {
             throw new NotImplementedException();
         }

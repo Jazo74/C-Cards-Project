@@ -20,7 +20,6 @@ namespace Cardgame
             MachineLearning();
             return topCard;
         }
-
         private void MachineLearning()
         {
             foreach (KeyValuePair<string, float> item in topCard.paramDict)
@@ -37,7 +36,7 @@ namespace Cardgame
                 }
             }
         }
-        public override string ChooseParam()
+        public override string ChooseParameter()
         {
             chance.Clear();
             return AIChoice();

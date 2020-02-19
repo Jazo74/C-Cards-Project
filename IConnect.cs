@@ -6,6 +6,6 @@ namespace Cardgame
     {
         public void AddCard(Card card);
         public void YouWon(List<Card> cards);
-        public string ChooseParam();
+        public string ChooseParameter();
     }
 }

@@ -10,7 +10,8 @@ namespace Cardgame
 
         public void PutTable(string playername, Card card)
         {
-            TableDict.Add(playername, card)
+            TableDict.Clear();
+            TableDict.Add(playername, card);
         }
         public string GetWinner(string parameter)
         {
@@ -24,15 +25,17 @@ namespace Cardgame
                     best = item.Value.paramDict[parameter];
                     winner = item.Key;
                 }
-
-
             }
             return winner;
-
         }
-        public Dictionary<string, Card> GetTable()
+        public List<Card> GetTable()
         {
-            return TableDict;
+            List<Card> cards = new List<Card>();
+            foreach (KeyValuePair<string, Card> item in TableDict)
+            {
+                cards.Add(item.Value);
+            }
+            return cards;
         }
     }
 }

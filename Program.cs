@@ -7,7 +7,8 @@ namespace Cardgame
         static void Main(string[] args)
         {
             Deck deck = new Deck("cards.csv");
-            Console.ReadLine();
+            Dealer dealer = new Dealer(deck);
+            dealer.start();
         }
         
         
