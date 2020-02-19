@@ -37,13 +37,13 @@ namespace Cardgame
         private void AddPlayers()
         {
             listOfPlayers.Clear();
-            Console.WriteLine("Number of players?: ");
+            Console.Write("Number of players?: ");
             int numberOfPlayers = int.Parse(Console.ReadLine());
             for (int number = 1; number < numberOfPlayers+1; number++)
             {
-                Console.WriteLine("The type of the " + number.ToString() + ". player? ('human' or 'ai'): ");
+                Console.Write("The type of the " + number.ToString() + ". player? ('human' or 'ai'): ");
                 string typeOfPlayer = Console.ReadLine();
-                Console.WriteLine("The name of the " + number.ToString() + ". player?: ");
+                Console.Write("The name of the " + number.ToString() + ". player?: ");
                 string nameOfPlayer = Console.ReadLine();
                 if (typeOfPlayer.ToLower() == "human")
                 {
@@ -59,7 +59,6 @@ namespace Cardgame
                 }
             }
         }
-
         private void Play(string firstPlayer)
         {
             int round = 1;
@@ -86,7 +85,8 @@ namespace Cardgame
                     }
                 }
                 // showing the first player card
-                Console.WriteLine("showing the first player card");
+                Console.WriteLine(table.GetTable()[0].ToString());
+                Console.WriteLine("The chosen parameter is: " + parameter);
                 foreach (Player player in listOfPlayers)
                 {
                     if (player.Name != firstPlayer)
@@ -95,7 +95,10 @@ namespace Cardgame
                     }
                 }
                 // showing the rest of the cards
-                Console.WriteLine("showing the rest of the cards");
+                foreach (Card card in table.GetTable())
+                {
+                    Console.WriteLine(card.ToString());
+                }
 
                 foreach (Player player in listOfPlayers)
                 {
@@ -142,7 +145,7 @@ namespace Cardgame
             while (true)
             {
                 showMenu(menupoints);
-                Console.WriteLine("Type in your choice: ");
+                Console.Write("Type in your choice: ");
                 int choice = int.Parse(Console.ReadLine());
                 switch (choice)
                 {
@@ -153,6 +156,7 @@ namespace Cardgame
                         }
                     case 1:
                         {
+                            myDeck.Shuffle();
                             AddPlayers();
                             param = myDeck.GetParameters();
                             Dealing();

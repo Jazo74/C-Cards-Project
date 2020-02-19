@@ -23,7 +23,7 @@ namespace Cardgame
 
         public override string ToString()
         {
-            return Brand + " - " + Type + " - " + Country + " - " + paramDict["Cylinders"] + " - " + paramDict["EngineCap"] + " - " + paramDict["HorsePower"] + " - " + paramDict["MaxSpeed"] + " - " + paramDict["Consumption"]; ;
+            return Brand + " " + Type + " from " + Country + " : " + paramDict["Cylinders"] + " cylinders - " + paramDict["EngineCap"] + " cm3 - " + paramDict["HorsePower"] + " LE - " + paramDict["MaxSpeed"] + " kmh - " + paramDict["Consumption"] + " l"; ;
         }
     }
 }

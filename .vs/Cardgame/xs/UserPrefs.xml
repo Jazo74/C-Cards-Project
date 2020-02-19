@@ -2,32 +2,30 @@
   <MonoDevelop.Ide.ItemProperties.Cardgame PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="AIPlayer.cs" Line="56" Column="27" />
+      <File FileName="AIPlayer.cs" Line="35" Column="37" />
       <File FileName="IConnect.cs" />
-      <File FileName="Player.cs" />
-      <File FileName="Dealer.cs" />
+      <File FileName="Dealer.cs" Line="148" Column="30" />
       <File FileName="Table.cs" />
       <File FileName="Deck.cs" Line="35" Column="24" />
+      <File FileName="Card.cs" Line="26" Column="254" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Cardgame" expanded="True">
             <Node name="Cardgame" expanded="True">
-              <Node name="AIPlayer.cs" selected="True" />
+              <Node name="Dealer.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State>
-          <Value>topCard.paramDict</Value>
           <Value>minValues</Value>
           <Value>maxValues</Value>
-          <Value>chance</Value>
-          <Value>min</Value>
-          <Value>max</Value>
-          <Value>bestChoice</Value>
+          <Value>topCard.paramDict</Value>
+          <Value>item.Key</Value>
+          <Value>Name</Value>
         </State>
       </Pad>
     </Pads>

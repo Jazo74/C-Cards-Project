@@ -32,7 +32,7 @@ namespace Cardgame
                 if (!maxValues.ContainsKey(item.Key)) { maxValues.Add(item.Key, item.Value); }
                 else
                 {
-                    if (item.Value < maxValues[item.Key]) { maxValues[item.Key] = item.Value; }
+                    if (item.Value > maxValues[item.Key]) { maxValues[item.Key] = item.Value; }
                 }
             }
         }
@@ -48,6 +48,7 @@ namespace Cardgame
                 float min = item.Value - minValues[item.Key];
                 float max = maxValues[item.Key] - minValues[item.Key];
                 if (max == 0) { max = 1; }
+                Console.WriteLine(item.Key + " - " + min/max);
                 chance.Add(item.Key, min / max);
             }
         }
