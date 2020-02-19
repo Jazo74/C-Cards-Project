@@ -15,14 +15,27 @@ namespace Cardgame
         public string GetWinner(string parameter)
         {
             string winner = "error";
-            float best = 0;
+            float max = 0;
+            float min = 1000;
 
             foreach (KeyValuePair<string, Card> item in TableDict)
             {
-                if (item.Value.paramDict[parameter] > best)
+
+                if (parameter == "Consumption")
                 {
-                    best = item.Value.paramDict[parameter];
-                    winner = item.Key;
+                    if (item.Value.paramDict[parameter] < min)
+                    {
+                        min = item.Value.paramDict[parameter];
+                        winner = item.Key;
+                    }
+                }
+                else
+                {
+                    if (item.Value.paramDict[parameter] > max)
+                    {
+                        max = item.Value.paramDict[parameter];
+                        winner = item.Key;
+                    }
                 }
             }
             return winner;

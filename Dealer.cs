@@ -25,7 +25,6 @@ namespace Cardgame
             {
                 foreach (Player player in listOfPlayers)
                 {
-                    Console.WriteLine(myDeck.GetNumberOfCards());
                     player.AddCard(myDeck.GetTopCard());
                 }
             }
@@ -86,7 +85,8 @@ namespace Cardgame
                     }
                 }
                 // showing the first player card
-                Console.WriteLine(table.GetTable()[0].Brand);
+                Console.Write(firstPlayer + " - ");
+                Console.WriteLine(table.GetTable()[0].ToString());
                 Console.WriteLine("The chosen parameter is: " + parameter);
                 foreach (Player player in listOfPlayers)
                 {
@@ -121,6 +121,11 @@ namespace Cardgame
                 Console.WriteLine("The " + round.ToString() + ". winner is: " + winner);
                 table.ResetTable();
                 round++;
+                foreach (Player player in listOfPlayers)
+                {
+                    Console.WriteLine(player.Name + " - " + player.GetNumberOfCards().ToString());
+                }
+                Console.WriteLine("------------------------------------------------------------"); ;
             }
         }
         private string ChooseParameterManual()

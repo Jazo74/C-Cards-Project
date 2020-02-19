@@ -1,31 +1,31 @@
 ﻿<Properties StartupConfiguration="{0537C21B-55CC-4799-996D-6BA44D2874CD}|Default">
   <MonoDevelop.Ide.ItemProperties.Cardgame PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Dealer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Player.cs">
     <Files>
-      <File FileName="AIPlayer.cs" Line="35" Column="37" />
+      <File FileName="AIPlayer.cs" Line="40" Column="10" />
       <File FileName="IConnect.cs" />
-      <File FileName="Dealer.cs" Line="148" Column="30" />
-      <File FileName="Table.cs" />
-      <File FileName="Deck.cs" Line="35" Column="24" />
-      <File FileName="Card.cs" Line="26" Column="254" />
+      <File FileName="Dealer.cs" Line="125" Column="71" />
+      <File FileName="Table.cs" Line="37" Column="13" />
+      <File FileName="Deck.cs" Line="59" Column="1" />
+      <File FileName="Card.cs" Line="22" Column="10" />
+      <File FileName="Player.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Cardgame" expanded="True">
             <Node name="Cardgame" expanded="True">
-              <Node name="Dealer.cs" selected="True" />
+              <Node name="Player.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State>
-          <Value>minValues</Value>
-          <Value>maxValues</Value>
-          <Value>topCard.paramDict</Value>
-          <Value>item.Key</Value>
-          <Value>Name</Value>
+          <Value>table.GetTable()</Value>
+          <Value>listOfPlayers</Value>
+          <Value>parameter</Value>
+          <Value>table.GetTable()[0]</Value>
         </State>
       </Pad>
     </Pads>
