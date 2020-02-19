@@ -53,7 +53,7 @@ namespace Cardgame
         }
         private string AIChoice()
         {
-            float max = 0;
+            float max = -1;
             string bestChoice = "";
             CalculateChance();
             foreach (KeyValuePair<string, float> item in chance)

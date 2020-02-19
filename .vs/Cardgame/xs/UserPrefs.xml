@@ -2,30 +2,32 @@
   <MonoDevelop.Ide.ItemProperties.Cardgame PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="AIPlayer.cs" Line="22" Column="10" />
-      <File FileName="IConnect.cs" Line="9" Column="38" />
-      <File FileName="Player.cs" Line="44" Column="10" />
-      <File FileName="Dealer.cs" Line="105" Column="18" />
-      <File FileName="Program.cs" Line="11" Column="13" />
-      <File FileName="Deck.cs" Line="48" Column="14" />
-      <File FileName="IDeck.cs" Line="1" Column="1" />
-      <File FileName="Table.cs" Line="13" Column="31" />
+      <File FileName="AIPlayer.cs" Line="56" Column="27" />
+      <File FileName="IConnect.cs" />
+      <File FileName="Player.cs" />
+      <File FileName="Dealer.cs" />
+      <File FileName="Table.cs" />
+      <File FileName="Deck.cs" Line="35" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Cardgame" expanded="True">
             <Node name="Cardgame" expanded="True">
-              <Node name="Dealer.cs" selected="True" />
+              <Node name="AIPlayer.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State>
-          <Value>table.TableDict</Value>
-          <Value>AnimalList{index].Ownname</Value>
-          <Value>habitatName</Value>
+          <Value>topCard.paramDict</Value>
+          <Value>minValues</Value>
+          <Value>maxValues</Value>
+          <Value>chance</Value>
+          <Value>min</Value>
+          <Value>max</Value>
+          <Value>bestChoice</Value>
         </State>
       </Pad>
     </Pads>

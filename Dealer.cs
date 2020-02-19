@@ -62,6 +62,7 @@ namespace Cardgame
 
         private void Play(string firstPlayer)
         {
+            int round = 1;
             bool run = true;
             while (run)
             {
@@ -113,7 +114,8 @@ namespace Cardgame
                         player.YouWon(loot);
                     }
                 }
-                Console.WriteLine("The winner is: " + winner);
+                Console.WriteLine("The " + round.ToString() + ". winner is: " + winner);
+                round++;
             }
         }
         private string ChooseParameterManual()

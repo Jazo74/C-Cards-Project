@@ -32,6 +32,7 @@ namespace Cardgame
                 Card card = new Card(brand,type,country,cylinders,enginecap,horsepower,maxspeed,consumption);
                 listOfCards.Add(card);
             }
+            sr.Close();
         }
 
         public int GetNumberOfCards()
