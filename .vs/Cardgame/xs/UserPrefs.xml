@@ -1,22 +1,22 @@
 ﻿<Properties StartupConfiguration="{0537C21B-55CC-4799-996D-6BA44D2874CD}|Default">
   <MonoDevelop.Ide.ItemProperties.Cardgame PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="cards.csv">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Card.cs">
     <Files>
       <File FileName="AIPlayer.cs" Line="54" Column="72" />
       <File FileName="IConnect.cs" />
       <File FileName="Dealer.cs" Line="121" Column="86" />
       <File FileName="Table.cs" Line="24" Column="32" />
       <File FileName="Deck.cs" Line="59" Column="1" />
-      <File FileName="Card.cs" Line="26" Column="37" />
+      <File FileName="Card.cs" Line="27" Column="35" />
       <File FileName="Player.cs" Line="1" Column="1" />
-      <File FileName="cards.csv" Line="1" Column="1" />
+      <File FileName="cards.csv" Line="35" Column="19" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Cardgame" expanded="True">
             <Node name="Cardgame" expanded="True">
-              <Node name="cards.csv" selected="True" />
+              <Node name="Card.cs" selected="True" />
             </Node>
           </Node>
         </State>
