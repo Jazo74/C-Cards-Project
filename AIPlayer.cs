@@ -48,15 +48,8 @@ namespace Cardgame
                 float min = item.Value - minValues[item.Key];
                 float max = maxValues[item.Key] - minValues[item.Key];
                 if (max == 0) { max = 1; }
-                Console.WriteLine(item.Key + " - " + min/max);
-                if (item.Key == "Consumption")
-                {
-                    chance.Add(item.Key, 1 - (min / max)); // ez nem jó
-                }
-                else
-                {
-                    chance.Add(item.Key, min / max);
-                }
+                //Console.WriteLine(item.Key + " - " + min/max);
+                chance.Add(item.Key, min / max);
             }
         }
         private string AIChoice()

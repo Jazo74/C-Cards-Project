@@ -118,6 +118,7 @@ namespace Cardgame
         {
             int round = 1;
             bool run = true;
+            Console.Clear();
             while (run)
             {
                 string parameter = "error";
@@ -139,8 +140,7 @@ namespace Cardgame
                         }
                     }
                 }
-                // showing the first player card
-                Console.Write(firstPlayer + " - ");
+                Console.WriteLine("The first player is: " +firstPlayer);
                 Console.WriteLine(table.GetTable()[0].ToString());
                 Console.WriteLine("The chosen parameter is: " + parameter);
                 foreach (Player player in listOfPlayers)
@@ -150,7 +150,6 @@ namespace Cardgame
                         table.PutTable(player.Name, player.GetTopCard());
                     }
                 }
-                // showing the rest of the cards
                 foreach (Card card in table.GetTable())
                 {
                     Console.WriteLine(card.ToString());
@@ -182,6 +181,15 @@ namespace Cardgame
                 }
                 Console.WriteLine("------------------------------------------------------------"); ;
             }
+            ResetPlayersHand();
+            Console.ReadLine();
+        }
+        private void ResetPlayersHand()
+        {
+            foreach (Player player in listOfPlayers)
+            {
+                player.ResetDeck();
+            }
         }
         private string ChooseParameterManual()
         {
@@ -201,7 +209,8 @@ namespace Cardgame
         {
             string[] menupoints = new string[]
             {
-                "(1) Play",
+                "(1) Play (with new players)",
+                "(2) Play (with current players)",
                 "(0) End Program"
             };
             while (true)
@@ -223,6 +232,16 @@ namespace Cardgame
                             param = myDeck.GetParameters();
                             Dealing();
                             Play(ChooseFirtsPlayer());
+                            myDeck.ResetDeck();
+                            break;
+
+                        }
+                    case 2:
+                        {
+                            myDeck.Shuffle();
+                            Dealing();
+                            Play(ChooseFirtsPlayer());
+                            myDeck.ResetDeck();
                             break;
                         }
                 }

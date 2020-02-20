@@ -8,5 +8,6 @@ namespace Cardgame
         public Card GetTopCard();
         public void Shuffle();
         public List<string> GetParameters();
+        public void ResetDeck();
     }
 }

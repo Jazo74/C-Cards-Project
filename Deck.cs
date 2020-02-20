@@ -8,9 +8,11 @@ namespace Cardgame
     {
         List<Card> listOfCards = new List<Card>();
         Random rnd = new Random();
+        string filename;
 
         public Deck(string fileName)
         {
+            filename = fileName;
             LoadCSV(fileName);
         }
 
@@ -75,6 +77,11 @@ namespace Cardgame
                 tempList.Add(listOfCards[index2]);
             }
             listOfCards = tempList;
+        }
+
+        public void ResetDeck()
+        {
+            LoadCSV(filename);
         }
     }
 }

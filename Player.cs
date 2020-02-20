@@ -52,5 +52,10 @@ namespace Cardgame
         {
             throw new NotImplementedException();
         }
+
+        public void ResetDeck()
+        {
+            hand.Clear();
+        }
     }
 }
