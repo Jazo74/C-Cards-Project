@@ -26,11 +26,7 @@ namespace Cardgame
             return Brand.PadRight(14)
                 + Type.PadRight(22)
                 + " from " + Country.PadRight(13) + " : "
-<<<<<<< HEAD
                 + (paramDict["Weight"] + " kg - ").PadRight(6)
-=======
-                + (paramDict["Weight"] + " kg. - ").PadRight(8)
->>>>>>> d7ed037734a22d7033fa262bc7d289f6dd83a368
                 + (paramDict["EngineCap"] + " cm3 - ").PadLeft(11)
                 + (paramDict["HorsePower"] + " LE - ").PadLeft(9)
                 + (paramDict["MaxSpeed"] + " kmh - ").PadLeft(10)
