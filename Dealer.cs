@@ -33,7 +33,7 @@ namespace Cardgame
         {
             return listOfPlayers[rnd.Next(0, listOfPlayers.Count - 1)].Name;
         }
-        private void ShowCards(List<Card> cards)
+        private void ShowCards(Dictionary<string,Card> cards)
         {
             string brands = "|";
             string types = "|";
@@ -43,19 +43,28 @@ namespace Cardgame
             string horsepower = "|";
             string maxspeed = "|";
             string consuption = "|";
-
-            foreach (Card card in cards)
+            string line = " ";
+            for (int count = 0; count < cards.Count; count++)
             {
-                brands += card.Brand.PadRight(22) + " | ";
-                types += card.Type.PadRight(22) + " | ";
-                countries += card.Country.PadRight(22) + " | ";
-                weights += (card.paramDict["Weight"].ToString() + " kg").PadRight(22) + " | ";
-                enginecap += (card.paramDict["EngineCap"].ToString() + " cm3").PadRight(22) + " | ";
-                horsepower += (card.paramDict["HorsePower"].ToString() + " LE").PadRight(22) + " | ";
-                maxspeed += (card.paramDict["MaxSpeed"].ToString() + " kmh").PadRight(22) + " | ";
-                consuption += (card.paramDict["Consumption"].ToString() + " l").PadRight(22) + " | ";
+                line += "-----------------------";
+                for (int c = 0; c < count; c++)
+                {
+                    line += "-";
+                }
+                
             }
-            Console.WriteLine(" --------------------------------------------------------------------------------------------------");
+            foreach (KeyValuePair<string,Card> card in cards)
+            {
+                brands += card.Value.Brand.PadRight(22) + " | ";
+                types += card.Value.Type.PadRight(22) + " | ";
+                countries += card.Value.Country.PadRight(22) + " | ";
+                weights += (card.Value.paramDict["Weight"].ToString() + " kg").PadRight(22) + " | ";
+                enginecap += (card.Value.paramDict["EngineCap"].ToString() + " cm3").PadRight(22) + " | ";
+                horsepower += (card.Value.paramDict["HorsePower"].ToString() + " LE").PadRight(22) + " | ";
+                maxspeed += (card.Value.paramDict["MaxSpeed"].ToString() + " kmh").PadRight(22) + " | ";
+                consuption += (card.Value.paramDict["Consumption"].ToString() + " l").PadRight(22) + " | ";
+            }
+            Console.WriteLine(line);
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine(brands);
             Console.WriteLine(types);
@@ -66,8 +75,22 @@ namespace Cardgame
             Console.WriteLine(horsepower);
             Console.WriteLine(maxspeed);
             Console.WriteLine(consuption);
-            Console.WriteLine(" --------------------------------------------------------------------------------------------------");
-
+            Console.WriteLine(line);
+        }
+        private void Looting(string winner)
+        {
+            List<Card> loot = new List<Card>();
+            foreach (KeyValuePair<string, Card> hand in table.GetTable())
+            {
+                loot.Add(hand.Value);
+            }
+            foreach (Player player in listOfPlayers)
+            {
+                if (player.Name == winner)
+                {
+                    player.YouWon(loot);
+                }
+            }
         }
         private void AddPlayers()
         {
@@ -159,28 +182,20 @@ namespace Cardgame
                 string parameter = "error";
                 string winner = "error";
                 List<Card> loot = new List<Card>();
+                Console.WriteLine("The first player is: " + firstPlayer);
                 foreach (Player player in listOfPlayers)
                 {
                     if (player.Name == firstPlayer)
                     {
                         table.PutTable(player.Name, player.GetTopCard());
+                        ShowCards(table.GetTable());
                         parameter = player.ChooseParameter();
                         if (parameter == "human")
                         {
                             parameter = ChooseParameterManual();
                         }
-                        if (!param.Contains(parameter))
-                        {
-
-                        }
                     }
                 }
-                Console.WriteLine("The first player is: " +firstPlayer);
-                List<Card> singleCard = new List<Card>();
-                singleCard.Add(table.GetTable()[0]);
-                ShowCards(singleCard);
-                //Console.WriteLine(table.GetTable()[0].ToString());
-                Console.WriteLine("The chosen parameter is: " + parameter);
                 foreach (Player player in listOfPlayers)
                 {
                     if (player.Name != firstPlayer)
@@ -188,23 +203,11 @@ namespace Cardgame
                         table.PutTable(player.Name, player.GetTopCard());
                     }
                 }
-                /*foreach (Card card in table.GetTable())
-                {
-                    Console.WriteLine(card.ToString());
-                }*/
+                Console.WriteLine("The chosen parameter is: " + parameter);
                 ShowCards(table.GetTable());
-
-                
                 winner = table.GetWinner(parameter);
                 firstPlayer = winner;
-                loot = table.GetTable();
-                foreach (Player player in listOfPlayers)
-                {
-                    if (player.Name == winner)
-                    {
-                        player.YouWon(loot);
-                    }
-                }
+                Looting(winner);
                 Console.WriteLine("The winner of the " + round.ToString() + ". round is: " + winner);
                 table.ResetTable();
                 round++;

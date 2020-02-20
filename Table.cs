@@ -12,30 +12,26 @@ namespace Cardgame
         {
             TableDict.Add(playername, card);
         }
+
         public string GetWinner(string parameter)
         {
             string winner = "error";
             float max = 0;
-
-            foreach (KeyValuePair<string, Card> item in TableDict)
+            foreach (KeyValuePair<string, Card> card in TableDict)
             {
 
-                if (item.Value.paramDict[parameter] > max)
+                if (card.Value.paramDict[parameter] > max)
                 {
-                    max = item.Value.paramDict[parameter];
-                    winner = item.Key;
+                    max = card.Value.paramDict[parameter];
+                    winner = card.Key;
                 }
             }
             return winner;
         }
-        public List<Card> GetTable()
+
+        public Dictionary<string,Card> GetTable()
         {
-            List<Card> cards = new List<Card>();
-            foreach (KeyValuePair<string, Card> item in TableDict)
-            {
-                cards.Add(item.Value);
-            }
-            return cards;
+            return TableDict;
         }
         public void ResetTable()
         {
