@@ -118,7 +118,7 @@ namespace Cardgame
                         player.YouWon(loot);
                     }
                 }
-                Console.WriteLine("The " + round.ToString() + ". winner is: " + winner);
+                Console.WriteLine("The winner of the " + round.ToString() + ". round is: " + winner);
                 table.ResetTable();
                 round++;
                 foreach (Player player in listOfPlayers)

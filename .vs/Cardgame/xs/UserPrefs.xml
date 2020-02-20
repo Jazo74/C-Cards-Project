@@ -1,31 +1,32 @@
 ﻿<Properties StartupConfiguration="{0537C21B-55CC-4799-996D-6BA44D2874CD}|Default">
   <MonoDevelop.Ide.ItemProperties.Cardgame PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="cards.csv">
     <Files>
-      <File FileName="AIPlayer.cs" Line="40" Column="10" />
+      <File FileName="AIPlayer.cs" Line="54" Column="72" />
       <File FileName="IConnect.cs" />
-      <File FileName="Dealer.cs" Line="125" Column="71" />
-      <File FileName="Table.cs" Line="37" Column="13" />
+      <File FileName="Dealer.cs" Line="121" Column="86" />
+      <File FileName="Table.cs" Line="24" Column="32" />
       <File FileName="Deck.cs" Line="59" Column="1" />
-      <File FileName="Card.cs" Line="22" Column="10" />
+      <File FileName="Card.cs" Line="26" Column="37" />
       <File FileName="Player.cs" Line="1" Column="1" />
+      <File FileName="cards.csv" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Cardgame" expanded="True">
             <Node name="Cardgame" expanded="True">
-              <Node name="Player.cs" selected="True" />
+              <Node name="cards.csv" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State>
-          <Value>table.GetTable()</Value>
-          <Value>listOfPlayers</Value>
-          <Value>parameter</Value>
-          <Value>table.GetTable()[0]</Value>
+          <Value>max</Value>
+          <Value>item.Key</Value>
+          <Value>item.Value</Value>
+          <Value>chance</Value>
         </State>
       </Pad>
     </Pads>
