@@ -1,0 +1,7 @@
+﻿namespace Cardgame
+{
+    class WrongInputException
+    {
+
+    }
+}

@@ -37,14 +37,72 @@ namespace Cardgame
         private void AddPlayers()
         {
             listOfPlayers.Clear();
-            Console.Write("Number of players?: ");
-            int numberOfPlayers = int.Parse(Console.ReadLine());
-            for (int number = 1; number < numberOfPlayers+1; number++)
+            int numberOfPlayers = 0;
+            string typeOfPlayer = "";
+            string nameOfPlayer = "";
+            while (true)
             {
-                Console.Write("The type of the " + number.ToString() + ". player? ('human' or 'ai'): ");
-                string typeOfPlayer = Console.ReadLine();
-                Console.Write("The name of the " + number.ToString() + ". player?: ");
-                string nameOfPlayer = Console.ReadLine();
+                try
+                {
+                    Console.Write("Number of players?: ");
+                    numberOfPlayers = int.Parse(Console.ReadLine());
+                    if (numberOfPlayers > 4 || numberOfPlayers < 2)
+                    {
+                        throw new NumberOfPlayerException();
+                    }
+                    break;
+                }
+                catch (NumberOfPlayerException)
+                {
+                    Console.WriteLine("The number of player should be between 2 and 4");
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Wrong input");
+                }
+               }
+
+            for (int number = 1; number < numberOfPlayers + 1; number++)
+            {
+                while (true)
+                {
+                    try
+                    {
+                        Console.Write("The type of the " + number.ToString() + ". player? ('human' or 'ai'): ");
+                        typeOfPlayer = Console.ReadLine();
+                        if (typeOfPlayer.ToLower() != "human" && typeOfPlayer.ToLower() != "ai")
+                        {
+                            throw new WrongPlayertypeException();
+                        }
+                        break;
+                    }
+                    catch (WrongPlayertypeException)
+                    {
+                        Console.WriteLine("Player type should be 'human' or 'ai'");
+                    }
+                }
+                while (true)
+                {
+                    try
+                    {
+                        Console.Write("The name of the " + number.ToString() + ". player?: ");
+                        nameOfPlayer = Console.ReadLine();
+                        foreach (Player player in listOfPlayers)
+                        {
+                            if (player.Name == nameOfPlayer)
+                            {
+                                throw new SameNameException();
+                            }
+                        }
+                        break;
+                    }
+                    
+                    catch (SameNameException)
+                    {
+                        Console.WriteLine("The name of the players can't be the same");
+                    }
+                    
+                }
                 if (typeOfPlayer.ToLower() == "human")
                 {
                     listOfPlayers.Add(new Player(typeOfPlayer, nameOfPlayer));
@@ -53,11 +111,8 @@ namespace Cardgame
                 {
                     listOfPlayers.Add(new AIPlayer(typeOfPlayer, nameOfPlayer));
                 }
-                else
-                {
-
-                }
             }
+            
         }
         private void Play(string firstPlayer)
         {
@@ -135,11 +190,11 @@ namespace Cardgame
         }
         public void showMenu(string[] menupoints)
         {
-            int index = 1;
+            
             foreach (string point in menupoints)
             {
-                Console.WriteLine("(" + index + ") " + point);
-                index++;
+                Console.WriteLine(point);
+                
             }
         }
         public void start()
