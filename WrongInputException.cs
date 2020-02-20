@@ -1,6 +1,8 @@
-﻿namespace Cardgame
+﻿using System;
+
+namespace Cardgame
 {
-    class WrongInputException
+    class WrongInputException: Exception
     {
 
     }

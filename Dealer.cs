@@ -233,8 +233,24 @@ namespace Cardgame
         }
         private string ChooseParameterManual()
         {
-            Console.WriteLine("Choose a winning parameter: ");
-            return Console.ReadLine();
+            string param = "";
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Choose a winning parameter: ");
+                    param = Console.ReadLine();
+                    if (!this.param.Contains(param))
+                    {
+                        throw new WrongInputException();
+                    }
+                    return param;
+                }
+                catch (WrongInputException)
+                {
+                    Console.WriteLine("Wrong input");
+                } 
+            }
         }
         public void showMenu(string[] menupoints)
         {
@@ -257,15 +273,15 @@ namespace Cardgame
             {
                 showMenu(menupoints);
                 Console.Write("Type in your choice: ");
-                int choice = int.Parse(Console.ReadLine());
+                string choice = Console.ReadLine();
                 switch (choice)
                 {
-                    case 0:
+                    case "0":
                         {
                             Environment.Exit(0);
                             break;
                         }
-                    case 1:
+                    case "1":
                         {
                             myDeck.Shuffle();
                             AddPlayers();
@@ -276,7 +292,7 @@ namespace Cardgame
                             break;
 
                         }
-                    case 2:
+                    case "2":
                         {
                             myDeck.Shuffle();
                             Dealing();
