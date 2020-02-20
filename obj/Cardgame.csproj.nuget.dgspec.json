@@ -1,25 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/Users/JarmyZ/Projects/Cardgame/Cardgame.csproj": {}
+    "C:\\Users\\istva\\Desktop\\Cardgame\\Cardgame.csproj": {}
   },
   "projects": {
-    "/Users/JarmyZ/Projects/Cardgame/Cardgame.csproj": {
+    "C:\\Users\\istva\\Desktop\\Cardgame\\Cardgame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/JarmyZ/Projects/Cardgame/Cardgame.csproj",
+        "projectUniqueName": "C:\\Users\\istva\\Desktop\\Cardgame\\Cardgame.csproj",
         "projectName": "Cardgame",
-        "projectPath": "/Users/JarmyZ/Projects/Cardgame/Cardgame.csproj",
-        "packagesPath": "/Users/JarmyZ/.nuget/packages/",
-        "outputPath": "/Users/JarmyZ/Projects/Cardgame/obj/",
+        "projectPath": "C:\\Users\\istva\\Desktop\\Cardgame\\Cardgame.csproj",
+        "packagesPath": "C:\\Users\\istva\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\istva\\Desktop\\Cardgame\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/JarmyZ/.config/NuGet/NuGet.Config"
+          "C:\\Users\\istva\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -50,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -9,12 +9,12 @@ namespace Cardgame
         public string Country {get; }
         public Dictionary<string, float> paramDict = new Dictionary<string, float>();
 
-        public Card(string brand, string type, string country, float cylinders, float enginecap, float horsepower, float maxspeed, float consumption)
+        public Card(string brand, string type, string country, float weight, float enginecap, float horsepower, float maxspeed, float consumption)
         {
             Brand = brand; 
             Type = type;
             Country = country;
-            paramDict.Add("Cylinders", cylinders);
+            paramDict.Add("Weight", weight);
             paramDict.Add("EngineCap", enginecap);
             paramDict.Add("HorsePower", horsepower);
             paramDict.Add("MaxSpeed", maxspeed);
@@ -26,7 +26,7 @@ namespace Cardgame
             return Brand.PadRight(14)
                 + Type.PadRight(22)
                 + " from " + Country.PadRight(13) + " : "
-                + (paramDict["Cylinders"] + " cyl. - ").PadRight(8)
+                + (paramDict["Weight"] + " kg. - ").PadRight(8)
                 + (paramDict["EngineCap"] + " cm3 - ").PadLeft(11)
                 + (paramDict["HorsePower"] + " LE - ").PadLeft(9)
                 + (paramDict["MaxSpeed"] + " kmh - ").PadLeft(10)
