@@ -33,7 +33,42 @@ namespace Cardgame
         {
             return listOfPlayers[rnd.Next(0, listOfPlayers.Count - 1)].Name;
         }
+        private void ShowCards(List<Card> cards)
+        {
+            string brands = "|";
+            string types = "|";
+            string countries = "|";
+            string weights = "|";
+            string enginecap = "|";
+            string horsepower = "|";
+            string maxspeed = "|";
+            string consuption = "|";
 
+            foreach (Card card in cards)
+            {
+                brands += card.Brand.PadRight(22) + " | ";
+                types += card.Type.PadRight(22) + " | ";
+                countries += card.Country.PadRight(22) + " | ";
+                weights += (card.paramDict["Weight"].ToString() + " kg").PadRight(22) + " | ";
+                enginecap += (card.paramDict["EngineCap"].ToString() + " cm3").PadRight(22) + " | ";
+                horsepower += (card.paramDict["HorsePower"].ToString() + " LE").PadRight(22) + " | ";
+                maxspeed += (card.paramDict["MaxSpeed"].ToString() + " kmh").PadRight(22) + " | ";
+                consuption += (card.paramDict["Consumption"].ToString() + " l").PadRight(22) + " | ";
+            }
+            Console.WriteLine(" --------------------------------------------------------------------------------------------------");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine(brands);
+            Console.WriteLine(types);
+            Console.WriteLine(countries);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(weights);
+            Console.WriteLine(enginecap);
+            Console.WriteLine(horsepower);
+            Console.WriteLine(maxspeed);
+            Console.WriteLine(consuption);
+            Console.WriteLine(" --------------------------------------------------------------------------------------------------");
+
+        }
         private void AddPlayers()
         {
             listOfPlayers.Clear();
@@ -141,7 +176,10 @@ namespace Cardgame
                     }
                 }
                 Console.WriteLine("The first player is: " +firstPlayer);
-                Console.WriteLine(table.GetTable()[0].ToString());
+                List<Card> singleCard = new List<Card>();
+                singleCard.Add(table.GetTable()[0]);
+                ShowCards(singleCard);
+                //Console.WriteLine(table.GetTable()[0].ToString());
                 Console.WriteLine("The chosen parameter is: " + parameter);
                 foreach (Player player in listOfPlayers)
                 {
@@ -150,10 +188,11 @@ namespace Cardgame
                         table.PutTable(player.Name, player.GetTopCard());
                     }
                 }
-                foreach (Card card in table.GetTable())
+                /*foreach (Card card in table.GetTable())
                 {
                     Console.WriteLine(card.ToString());
-                }
+                }*/
+                ShowCards(table.GetTable());
 
                 foreach (Player player in listOfPlayers)
                 {
@@ -177,7 +216,7 @@ namespace Cardgame
                 round++;
                 foreach (Player player in listOfPlayers)
                 {
-                    Console.WriteLine(player.Name + " - " + player.GetNumberOfCards().ToString());
+                    Console.WriteLine(player.Name + " playes has " + player.GetNumberOfCards().ToString() + " card(s) left.");
                 }
                 Console.WriteLine("------------------------------------------------------------"); ;
             }
