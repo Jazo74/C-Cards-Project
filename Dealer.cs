@@ -194,13 +194,7 @@ namespace Cardgame
                 }*/
                 ShowCards(table.GetTable());
 
-                foreach (Player player in listOfPlayers)
-                {
-                    if (player.GetNumberOfCards() == 0)
-                    {
-                        run = false;
-                    }
-                }
+                
                 winner = table.GetWinner(parameter);
                 firstPlayer = winner;
                 loot = table.GetTable();
@@ -218,7 +212,14 @@ namespace Cardgame
                 {
                     Console.WriteLine(player.Name + " playes has " + player.GetNumberOfCards().ToString() + " card(s) left.");
                 }
-                Console.WriteLine("------------------------------------------------------------"); ;
+                Console.WriteLine("------------------------------------------------------------");
+                foreach (Player player in listOfPlayers)
+                {
+                    if (player.GetNumberOfCards() == 0)
+                    {
+                        run = false;
+                    }
+                }
             }
             ResetPlayersHand();
             Console.Write("Press any key to continue...");
