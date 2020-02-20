@@ -31,7 +31,7 @@ namespace Cardgame
         }
         private string ChooseFirtsPlayer()
         {
-            return listOfPlayers[rnd.Next(0, listOfPlayers.Count - 1)].Name;
+            return listOfPlayers[rnd.Next(0, listOfPlayers.Count)].Name;
         }
         private void ShowCards(Dictionary<string,Card> cards)
         {
@@ -95,6 +95,7 @@ namespace Cardgame
         private void AddPlayers()
         {
             listOfPlayers.Clear();
+            Console.Clear();
             int numberOfPlayers = 0;
             string typeOfPlayer = "";
             string nameOfPlayer = "";
@@ -211,11 +212,12 @@ namespace Cardgame
                 Console.WriteLine("The winner of the " + round.ToString() + ". round is: " + winner);
                 table.ResetTable();
                 round++;
+                Console.WriteLine("------------------------------------------------------------------------------------------------------");
                 foreach (Player player in listOfPlayers)
                 {
-                    Console.WriteLine(player.Name + " playes has " + player.GetNumberOfCards().ToString() + " card(s) left.");
+                    Console.WriteLine(player.Name + " has " + player.GetNumberOfCards().ToString() + " card(s) left.");
                 }
-                Console.WriteLine("------------------------------------------------------------");
+                Console.WriteLine("------------------------------------------------------------------------------------------------------");
                 foreach (Player player in listOfPlayers)
                 {
                     if (player.GetNumberOfCards() == 0)
@@ -227,6 +229,7 @@ namespace Cardgame
             ResetPlayersHand();
             Console.Write("Press any key to continue...");
             Console.ReadLine();
+            Console.Clear();
         }
         private void ResetPlayersHand()
         {
@@ -237,12 +240,17 @@ namespace Cardgame
         }
         private string ChooseParameterManual()
         {
-            string param = "";
+            string param;
             while (true)
             {
                 try
                 {
-                    Console.WriteLine("Choose a winning parameter: ");
+                    Console.Write("Choose a winning parameter ( ");
+                    foreach (string oneparam in this.param)
+                    {
+                        Console.Write(oneparam + ", ");
+                    }
+                    Console.WriteLine("): ");
                     param = Console.ReadLine();
                     if (!this.param.Contains(param))
                     {
@@ -258,15 +266,15 @@ namespace Cardgame
         }
         public void showMenu(string[] menupoints)
         {
-            
             foreach (string point in menupoints)
             {
                 Console.WriteLine(point);
-                
             }
         }
         public void start()
         {
+            Console.WriteLine("Game of Torque!");
+            Console.WriteLine();
             string[] menupoints = new string[]
             {
                 "(1) New Play",
@@ -276,6 +284,7 @@ namespace Cardgame
             while (true)
             {
                 showMenu(menupoints);
+                Console.WriteLine();
                 Console.Write("Type in your choice: ");
                 string choice = Console.ReadLine();
                 switch (choice)
