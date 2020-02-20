@@ -182,6 +182,7 @@ namespace Cardgame
                 Console.WriteLine("------------------------------------------------------------"); ;
             }
             ResetPlayersHand();
+            Console.Write("Press any key to continue...");
             Console.ReadLine();
         }
         private void ResetPlayersHand()
@@ -209,8 +210,8 @@ namespace Cardgame
         {
             string[] menupoints = new string[]
             {
-                "(1) Play (with new players)",
-                "(2) Play (with current players)",
+                "(1) New Play",
+                "(2) Another game with current players",
                 "(0) End Program"
             };
             while (true)
