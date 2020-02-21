@@ -1,5 +1,6 @@
 ﻿using System;
-using Cardgame.Core;
+using System.Threading;
+
 namespace Cardgame.UI
 {
     public class DealerUI
@@ -11,14 +12,6 @@ namespace Cardgame.UI
         }
         public void start()
         {
-            Console.WriteLine("Game of Torque!");
-            Console.WriteLine();
-            string[] menupoints = new string[]
-            {
-                "(1) New Play",
-                "(2) Another game with current players",
-                "(0) End Program"
-            };
             while (true)
             {
                 showMenu(menupoints);
@@ -44,10 +37,18 @@ namespace Cardgame.UI
                         }
                     case "2":
                         {
-                            dealer.myDeck.Shuffle();
-                            dealer.Dealing();
-                            dealer.Play(dealer.ChooseFirtsPlayer());
-                            dealer.myDeck.ResetDeck();
+                            if (dealer.CheckPlayersExist())
+                            {
+                                dealer.myDeck.Shuffle();
+                                dealer.Dealing();
+                                dealer.Play(dealer.ChooseFirtsPlayer());
+                                dealer.myDeck.ResetDeck();
+                            }
+                            else
+                            {
+                                Console.WriteLine("There are no current players. Start a new game.");
+                                Thread.Sleep(2000);
+                            }
                             break;
                         }
                 }
@@ -55,10 +56,19 @@ namespace Cardgame.UI
         }
         private void showMenu(string[] menupoints)
         {
+            Console.Clear();
+            Console.WriteLine("Game of Torque!");
+            Console.WriteLine();
             foreach (string point in menupoints)
             {
                 Console.WriteLine(point);
             }
         }
+        string[] menupoints = new string[]
+            {
+                "(1) New Play",
+                "(2) Another game with current players",
+                "(0) End Program"
+            };
     }
 }

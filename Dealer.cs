@@ -256,5 +256,10 @@ namespace Cardgame.UI
                 } 
             }
         }
+        public bool CheckPlayersExist()
+        {
+            if (listOfPlayers.Count == 0) { return false; }
+            return true;
+        }
     }
 }
