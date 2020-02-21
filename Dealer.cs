@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using Cardgame.Core;
 
 namespace Cardgame.UI
@@ -220,6 +221,7 @@ namespace Cardgame.UI
                         run = false;
                     }
                 }
+                Thread.Sleep(400);
             }
             ResetPlayersHand();
             Console.Write("                                   Press any key to continue...");
