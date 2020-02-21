@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cardgame
+namespace Cardgame.Core
 {
     class Table
     {

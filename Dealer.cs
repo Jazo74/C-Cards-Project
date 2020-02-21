@@ -1,73 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using Cardgame.Core;
 
-namespace Cardgame
+namespace Cardgame.UI
 {
-    class Dealer
+    public class Dealer
     {
-        IDeck myDeck;
+        public IDeck myDeck;
         List<Player> listOfPlayers = new List<Player>();
         Table table = new Table();
         Random rnd = new Random();
-        List<string> param;
+        public List<string> param;
 
         public Dealer(Deck deck)
         {
             myDeck = deck;
         }
-        public void showMenu(string[] menupoints)
-        {
-            foreach (string point in menupoints)
-            {
-                Console.WriteLine(point);
-            }
-        }
-        public void start()
-        {
-            Console.WriteLine("Game of Torque!");
-            Console.WriteLine();
-            string[] menupoints = new string[]
-            {
-                "(1) New Play",
-                "(2) Another game with current players",
-                "(0) End Program"
-            };
-            while (true)
-            {
-                showMenu(menupoints);
-                Console.WriteLine();
-                Console.Write("Type in your choice: ");
-                string choice = Console.ReadLine();
-                switch (choice)
-                {
-                    case "0":
-                    {
-                        Environment.Exit(0);
-                        break;
-                    }
-                    case "1":
-                    {
-                        myDeck.Shuffle();
-                        AddPlayers();
-                        param = myDeck.GetParameters();
-                        Dealing();
-                        Play(ChooseFirtsPlayer());
-                        myDeck.ResetDeck();
-                        break;
-
-                    }
-                    case "2":
-                    {
-                        myDeck.Shuffle();
-                        Dealing();
-                        Play(ChooseFirtsPlayer());
-                        myDeck.ResetDeck();
-                        break;
-                    }
-                }
-            }
-        }
-        private void Dealing()
+        public void Dealing()
         {
             while (myDeck.GetNumberOfCards() > 0)
             {
@@ -77,7 +26,7 @@ namespace Cardgame
                 }
             }
         }
-        private string ChooseFirtsPlayer()
+        public string ChooseFirtsPlayer()
         {
             return listOfPlayers[rnd.Next(0, listOfPlayers.Count)].Name;
         }
@@ -139,7 +88,7 @@ namespace Cardgame
                 }
             }
         }
-        private void AddPlayers()
+        public void AddPlayers()
         {
             listOfPlayers.Clear();
             Console.Clear();
@@ -216,7 +165,7 @@ namespace Cardgame
                 }
             }
         }
-        private void Play(string firstPlayer)
+        public void Play(string firstPlayer)
         {
             int round = 1;
             bool run = true;

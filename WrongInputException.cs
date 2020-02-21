@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Cardgame
+namespace Cardgame.Core
 {
     class WrongInputException: Exception
     {

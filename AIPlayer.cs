@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Cardgame
+namespace Cardgame.Core
 {
     public class AIPlayer : Player
     {

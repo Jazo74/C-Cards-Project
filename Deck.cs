@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace Cardgame
+namespace Cardgame.Core
 {
     public class Deck : IDeck
     {

@@ -1,6 +1,7 @@
 ﻿using System;
+using Cardgame.UI;
 
-namespace Cardgame
+namespace Cardgame.Core
 {
     class Program
     {
@@ -8,7 +9,8 @@ namespace Cardgame
         {
             Deck deck = new Deck("cards.csv");
             Dealer dealer = new Dealer(deck);
-            dealer.start();
+            DealerUI dealerUI = new DealerUI(dealer);
+            dealerUI.start();
         }
     }
 }
