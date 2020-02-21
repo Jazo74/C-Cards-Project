@@ -57,7 +57,9 @@ namespace Cardgame.UI
         private void showMenu(string[] menupoints)
         {
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Game of Torque!");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
             foreach (string point in menupoints)
             {

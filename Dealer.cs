@@ -40,6 +40,7 @@ namespace Cardgame.UI
             string horsepower = "|";
             string maxspeed = "|";
             string consuption = "|";
+            string playerNames = " ";
             string line = " ";
             for (int count = 0; count < cards.Count; count++)
             {
@@ -51,6 +52,7 @@ namespace Cardgame.UI
             }
             foreach (KeyValuePair<string,Card> card in cards)
             {
+                playerNames += (card.Key.PadRight(25));
                 brands += card.Value.Brand.PadRight(22) + " | ";
                 types += card.Value.Type.PadRight(22) + " | ";
                 countries += card.Value.Country.PadRight(22) + " | ";
@@ -60,6 +62,7 @@ namespace Cardgame.UI
                 maxspeed += (card.Value.paramDict["MaxSpeed"].ToString() + " kmh").PadRight(22) + " | ";
                 consuption += (card.Value.paramDict["Consumption"].ToString() + " l").PadRight(22) + " | ";
             }
+            Console.WriteLine(playerNames);
             Console.WriteLine(line);
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine(brands);
@@ -201,15 +204,15 @@ namespace Cardgame.UI
                 winner = table.GetWinner(parameter);
                 firstPlayer = winner;
                 Looting(winner);
-                Console.WriteLine("The winner of the " + round.ToString() + ". round is: " + winner);
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("                               The winner of the " + round.ToString() + ". round is: " + winner);
+                Console.ForegroundColor = ConsoleColor.White;
                 table.ResetTable();
                 round++;
-                Console.WriteLine("------------------------------------------------------------------------------------------------------");
                 foreach (Player player in listOfPlayers)
                 {
                     Console.WriteLine(player.Name + " has " + player.GetNumberOfCards().ToString() + " card(s) left.");
                 }
-                Console.WriteLine("------------------------------------------------------------------------------------------------------");
                 foreach (Player player in listOfPlayers)
                 {
                     if (player.GetNumberOfCards() == 0)
@@ -219,7 +222,7 @@ namespace Cardgame.UI
                 }
             }
             ResetPlayersHand();
-            Console.Write("Press any key to continue...");
+            Console.Write("                                   Press any key to continue...");
             Console.ReadLine();
             Console.Clear();
         }
