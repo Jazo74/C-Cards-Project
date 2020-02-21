@@ -10,8 +10,6 @@ namespace Cardgame
             Dealer dealer = new Dealer(deck);
             dealer.start();
         }
-        
-        
     }
 }
     

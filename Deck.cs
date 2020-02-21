@@ -9,13 +9,11 @@ namespace Cardgame
         List<Card> listOfCards = new List<Card>();
         Random rnd = new Random();
         string filename;
-
         public Deck(string fileName)
         {
             filename = fileName;
             LoadCSV(fileName);
         }
-
         public void LoadCSV(string fileName)
         {
             StreamReader sr = new StreamReader(fileName);
@@ -36,12 +34,10 @@ namespace Cardgame
             }
             sr.Close();
         }
-
         public int GetNumberOfCards()
         {
             return listOfCards.Count;
         }
-
         public List<string> GetParameters()
         {
             List<string> returnList = new List<string>();
@@ -51,14 +47,12 @@ namespace Cardgame
             }
             return returnList;
         }
-
         public Card GetTopCard()
         {
             Card card = listOfCards[0];
             listOfCards.RemoveAt(0);
             return card;
         }
-
         public void Shuffle()
         {
             List<int> indexList = new List<int>();
@@ -78,7 +72,6 @@ namespace Cardgame
             }
             listOfCards = tempList;
         }
-
         public void ResetDeck()
         {
             LoadCSV(filename);

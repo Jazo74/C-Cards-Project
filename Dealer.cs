@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 
 namespace Cardgame
 {
@@ -18,7 +15,58 @@ namespace Cardgame
         {
             myDeck = deck;
         }
+        public void showMenu(string[] menupoints)
+        {
+            foreach (string point in menupoints)
+            {
+                Console.WriteLine(point);
+            }
+        }
+        public void start()
+        {
+            Console.WriteLine("Game of Torque!");
+            Console.WriteLine();
+            string[] menupoints = new string[]
+            {
+                "(1) New Play",
+                "(2) Another game with current players",
+                "(0) End Program"
+            };
+            while (true)
+            {
+                showMenu(menupoints);
+                Console.WriteLine();
+                Console.Write("Type in your choice: ");
+                string choice = Console.ReadLine();
+                switch (choice)
+                {
+                    case "0":
+                    {
+                        Environment.Exit(0);
+                        break;
+                    }
+                    case "1":
+                    {
+                        myDeck.Shuffle();
+                        AddPlayers();
+                        param = myDeck.GetParameters();
+                        Dealing();
+                        Play(ChooseFirtsPlayer());
+                        myDeck.ResetDeck();
+                        break;
 
+                    }
+                    case "2":
+                    {
+                        myDeck.Shuffle();
+                        Dealing();
+                        Play(ChooseFirtsPlayer());
+                        myDeck.ResetDeck();
+                        break;
+                    }
+                }
+            }
+        }
         private void Dealing()
         {
             while (myDeck.GetNumberOfCards() > 0)
@@ -51,7 +99,6 @@ namespace Cardgame
                 {
                     line += "-";
                 }
-                
             }
             foreach (KeyValuePair<string,Card> card in cards)
             {
@@ -96,9 +143,9 @@ namespace Cardgame
         {
             listOfPlayers.Clear();
             Console.Clear();
-            int numberOfPlayers = 0;
-            string typeOfPlayer = "";
-            string nameOfPlayer = "";
+            int numberOfPlayers;
+            string typeOfPlayer;
+            string nameOfPlayer;
             while (true)
             {
                 try
@@ -120,7 +167,6 @@ namespace Cardgame
                     Console.WriteLine("Wrong input");
                 }
                }
-
             for (int number = 1; number < numberOfPlayers + 1; number++)
             {
                 while (true)
@@ -155,12 +201,10 @@ namespace Cardgame
                         }
                         break;
                     }
-                    
                     catch (SameNameException)
                     {
                         Console.WriteLine("The name of the players can't be the same");
                     }
-                    
                 }
                 if (typeOfPlayer.ToLower() == "human")
                 {
@@ -171,7 +215,6 @@ namespace Cardgame
                     listOfPlayers.Add(new AIPlayer(typeOfPlayer, nameOfPlayer));
                 }
             }
-            
         }
         private void Play(string firstPlayer)
         {
@@ -262,58 +305,6 @@ namespace Cardgame
                 {
                     Console.WriteLine("Wrong input");
                 } 
-            }
-        }
-        public void showMenu(string[] menupoints)
-        {
-            foreach (string point in menupoints)
-            {
-                Console.WriteLine(point);
-            }
-        }
-        public void start()
-        {
-            Console.WriteLine("Game of Torque!");
-            Console.WriteLine();
-            string[] menupoints = new string[]
-            {
-                "(1) New Play",
-                "(2) Another game with current players",
-                "(0) End Program"
-            };
-            while (true)
-            {
-                showMenu(menupoints);
-                Console.WriteLine();
-                Console.Write("Type in your choice: ");
-                string choice = Console.ReadLine();
-                switch (choice)
-                {
-                    case "0":
-                        {
-                            Environment.Exit(0);
-                            break;
-                        }
-                    case "1":
-                        {
-                            myDeck.Shuffle();
-                            AddPlayers();
-                            param = myDeck.GetParameters();
-                            Dealing();
-                            Play(ChooseFirtsPlayer());
-                            myDeck.ResetDeck();
-                            break;
-
-                        }
-                    case "2":
-                        {
-                            myDeck.Shuffle();
-                            Dealing();
-                            Play(ChooseFirtsPlayer());
-                            myDeck.ResetDeck();
-                            break;
-                        }
-                }
             }
         }
     }

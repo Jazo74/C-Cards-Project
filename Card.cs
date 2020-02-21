@@ -8,7 +8,6 @@ namespace Cardgame
         public string Type { get; }
         public string Country {get; }
         public Dictionary<string, float> paramDict = new Dictionary<string, float>();
-
         public Card(string brand, string type, string country, float weight, float enginecap, float horsepower, float maxspeed, float consumption)
         {
             Brand = brand; 
@@ -20,7 +19,6 @@ namespace Cardgame
             paramDict.Add("MaxSpeed", maxspeed);
             paramDict.Add("Consumption", consumption);
         }
-
         public override string ToString()
         {
             return Brand.PadRight(14)

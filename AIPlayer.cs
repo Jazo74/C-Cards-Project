@@ -9,11 +9,9 @@ namespace Cardgame
         Dictionary<string, float> maxValues = new Dictionary<string, float>();
         Dictionary<string, float> chance = new Dictionary<string, float>();
         Card topCard;
-
         public AIPlayer(string name, string type) : base(name, type) 
         {
         }
-
         public override Card GetTopCard()
         {
             topCard = base.GetTopCard();
